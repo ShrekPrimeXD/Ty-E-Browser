@@ -1,8 +1,9 @@
-# Ty‑E Browser
+# Ty-E Browser GitHub Pages
 
-Un mini‑navigateur web hébergé sur GitHub Pages.
+Mini-navigateur hébergé sur GitHub Pages.
 
-## Installation
-1. Uploade tous les fichiers sur ton dépôt GitHub.
-2. Active GitHub Pages.
-3. Va à l’URL publique et ton navigateur fonctionne.
+## Déploiement
+1. Crée un repo GitHub.
+2. Upload tous les fichiers.
+3. Settings → Pages → Branch: main, Folder: root.
+4. Accède à l'URL : https://<user>.github.io/<repo>/
