@@ -1,4 +1,4 @@
-const HOME = "https://www.w3schools.com/"; // Site test iframe-friendly
+const HOME = "https://www.w3schools.com/";
 
 const address = document.getElementById("address");
 const viewport = document.getElementById("viewport");
