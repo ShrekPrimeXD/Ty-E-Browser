@@ -1,4 +1,5 @@
-const HOME = "https://www.w3schools.com/";
+// Page par défaut = ton GitHub Pages
+const HOME = "https://shrekprimexd.github.io/Ty-E/";
 
 const address = document.getElementById("address");
 const viewport = document.getElementById("viewport");
@@ -27,9 +28,8 @@ function renderTabs(){
   tabs.forEach((t,i)=>{
     let div=document.createElement("div");
     div.className="tab"+(i===activeTabIndex?" active":"");
-    div.textContent=new URL(t.url).hostname;
+    div.textContent=t.url;
 
-    // Click onglet
     div.onclick=()=>{activeTabIndex=i;navigateTo(t.url);}
 
     // Drag & drop
@@ -52,7 +52,7 @@ function renderTabs(){
 
 // Navigation
 function navigateTo(raw){
-  let url = raw.includes("://") ? raw : "https://"+raw;
+  let url = raw.includes("://") ? raw : raw;
   address.value = raw;
   let tab = tabs[activeTabIndex];
   if(tab){
