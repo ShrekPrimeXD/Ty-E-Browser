@@ -1,29 +1,40 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+<html lang="fr" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ty‑E Browser</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ty-E Browser</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0f172a" />
 </head>
 <body>
-  <div id="browser">
-    <div id="topbar">
-      <span id="logo">Ty‑E</span>
-      <button id="newTab">+</button>
+  <header class="topbar">
+    <div class="brand">Ty-E Browser</div>
+
+    <div class="controls">
+      <button id="themeSwitch">🌓</button>
+      <button id="back">◀</button>
+      <button id="forward">▶</button>
+      <input id="address" placeholder="Entrer une URL ou une recherche" />
+      <button id="go">Aller</button>
+      <button id="newTab">＋</button>
     </div>
+  </header>
 
-    <div id="tabs"></div>
-    <div id="toolbar">
-      <input type="text" id="address" placeholder="Rechercher ou entrer une URL">
-      <button id="go">→</button>
-    </div>
-
-    <div id="progress"></div>
-
-    <iframe id="viewport"></iframe>
+  <div class="tabsBar">
+    <div id="tabsContainer" class="tabsContainer"></div>
   </div>
+
+  <div id="progressBar"></div>
+
+  <main>
+    <section class="viewportWrap">
+      <iframe id="viewport" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+    </section>
+  </main>
+
+  <footer class="foot">Ty-E Browser • GitHub Pages Ready</footer>
 
   <script src="app.js"></script>
 </body>
