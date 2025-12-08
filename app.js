@@ -1,0 +1,1 @@
+// Placeholder JS: Le script complet doit être collé ici.
