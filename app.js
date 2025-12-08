@@ -1,5 +1,5 @@
 // Page par défaut = ton GitHub Pages
-const HOME = "https://shrekprimexd.github.io/Ty-E/";
+const HOME = "https://shrekprimexd.github.io/Ty-E-Website/";
 
 const address = document.getElementById("address");
 const viewport = document.getElementById("viewport");
