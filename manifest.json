@@ -1,0 +1,9 @@
+{
+  "name":"Ty‑E Browser",
+  "short_name":"Ty‑E",
+  "display":"standalone",
+  "start_url":"index.html",
+  "theme_color":"#000000",
+  "background_color":"#000000",
+  "icons":[]
+}
