@@ -20,3 +20,13 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-seri
 .tabsBar{display:flex;gap:5px;padding:5px;background:var(--bg);}
 .tab{padding:3px 8px;background:#222;color:white;border-radius:5px;cursor:pointer;}
 .tab.active{background:var(--rainbow);}
+
+/* MOBILE */
+@media (max-width:768px){
+  .topbar{flex-direction:column;gap:6px;padding:6px;}
+  .controls{width:100%;display:grid;grid-template-columns:50px 50px 1fr 60px 50px;gap:6px;}
+  #address{width:100%;}
+  .tabsBar{overflow-x:auto;white-space:nowrap;padding:6px;}
+  .tabsContainer{display:flex;gap:6px;}
+  #viewport{height:80vh;}
+}
