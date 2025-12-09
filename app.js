@@ -1,4 +1,3 @@
-// Page par défaut = ton nouveau GitHub Pages
 const HOME = "https://shrekprimexd.github.io/Ty-E-Website/";
 
 const address = document.getElementById("address");
@@ -14,7 +13,6 @@ let tabs = [];
 let activeTabIndex = -1;
 let draggedTabIndex = null;
 
-// Créer un nouvel onglet
 function createTab(url = HOME){
   tabs.push({url:url,history:[url],index:0});
   activeTabIndex = tabs.length - 1;
@@ -22,17 +20,21 @@ function createTab(url = HOME){
   navigateTo(url);
 }
 
-// Afficher les onglets
 function renderTabs(){
   tabsContainer.innerHTML="";
   tabs.forEach((t,i)=>{
     let div=document.createElement("div");
     div.className="tab"+(i===activeTabIndex?" active":"");
-    div.textContent=t.url;
 
+    // Logo onglet
+    let img = document.createElement("img");
+    img.src="icon-32.png"; // ton logo d’onglet
+    img.className="tab-logo";
+    div.appendChild(img);
+
+    div.appendChild(document.createTextNode(t.url));
     div.onclick=()=>{activeTabIndex=i;navigateTo(t.url);}
 
-    // Drag & drop
     div.draggable=true;
     div.addEventListener("dragstart",()=>{draggedTabIndex=i;div.style.opacity=0.4;});
     div.addEventListener("dragend",()=>{draggedTabIndex=null;div.style.opacity=1;});
@@ -50,7 +52,6 @@ function renderTabs(){
   });
 }
 
-// Navigation
 function navigateTo(raw){
   let url = raw.includes("://") ? raw : raw;
   address.value = raw;
@@ -65,19 +66,10 @@ function navigateTo(raw){
   renderTabs();
 }
 
-// Boutons
 goBtn.onclick=()=>navigateTo(address.value);
 address.addEventListener("keydown",e=>{if(e.key==="Enter")navigateTo(address.value);});
 newTabBtn.onclick=()=>createTab();
 themeSwitch.onclick=()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==="dark"?"light":"dark";}
-backBtn.onclick=()=>{
-  let tab=tabs[activeTabIndex];
-  if(tab.index>0){tab.index--;navigateTo(tab.history[tab.index]);}
-}
-forwardBtn.onclick=()=>{
-  let tab=tabs[activeTabIndex];
-  if(tab.index<tab.history.length-1){tab.index++;navigateTo(tab.history[tab.index]);}
-}
-
-// Initialisation
+backBtn.onclick=()=>{let tab=tabs[activeTabIndex];if(tab.index>0){tab.index--;navigateTo(tab.history[tab.index]);}}
+forwardBtn.onclick=()=>{let tab=tabs[activeTabIndex];if(tab.index<tab.history.length-1){tab.index++;navigateTo(tab.history[tab.index]);}}
 document.addEventListener("DOMContentLoaded",()=>createTab());
