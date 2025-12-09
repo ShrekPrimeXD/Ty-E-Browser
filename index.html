@@ -5,16 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ty-E Browser</title>
 <link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.ico" sizes="32x32">
 </head>
 <body>
 
 <header class="topbar">
-  <div class="brand">Ty-E Browser</div>
+  <!-- Logo du navigateur -->
+  <div class="brand">
+    <img src="LogoTy-E.png" alt="Ty-E Logo" class="logo-browser">
+    Ty-E Browser
+  </div>
+
   <div class="controls">
     <button id="themeSwitch">🌓</button>
     <button id="back">◀</button>
     <button id="forward">▶</button>
-    <input id="address" placeholder="Entrer une URL GitHub Pages ou page locale">
+    <input id="address" placeholder="Entrer une URL">
     <button id="go">Aller</button>
     <button id="newTab">＋</button>
   </div>
@@ -29,6 +35,11 @@
 <main>
   <iframe id="viewport"></iframe>
 </main>
+
+<footer class="footer">
+  Ty-E Browser
+  <img src="icon-192.png" class="logo-app" alt="App Logo">
+</footer>
 
 <script src="app.js"></script>
 </body>
