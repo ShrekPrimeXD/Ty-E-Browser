@@ -1,4 +1,4 @@
-// Page par défaut = ton GitHub Pages
+// Page par défaut = ton nouveau GitHub Pages
 const HOME = "https://shrekprimexd.github.io/Ty-E-Website/";
 
 const address = document.getElementById("address");
