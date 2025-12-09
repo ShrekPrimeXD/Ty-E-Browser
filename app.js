@@ -28,7 +28,7 @@ function renderTabs(){
 
     // Logo onglet
     let img = document.createElement("img");
-    img.src="icon-32.png"; // ton logo d’onglet
+    img.src="images/icon-32.png"; // ton logo d’onglet
     img.className="tab-logo";
     div.appendChild(img);
 
