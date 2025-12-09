@@ -1,56 +1,46 @@
-/* Logo du navigateur */
-.logo-browser{
-  width:30px;
-  height:30px;
-  vertical-align:middle;
-  margin-right:8px;
-}
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ty-E Browser</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="images/favicon.ico" sizes="32x32">
+</head>
+<body>
 
-/* Logo dans l’onglet */
-.tab img.tab-logo{
-  width:16px;
-  height:16px;
-  margin-right:4px;
-  vertical-align:middle;
-}
+<header class="topbar">
+  <!-- Logo du navigateur -->
+  <div class="brand">
+    <img src="images/LogoTy-E.png" alt="Ty-E Logo" class="logo-browser">
+    Ty-E Browser
+  </div>
 
-/* Logo d’application dans le footer */
-.footer .logo-app{
-  width:24px;
-  height:24px;
-  vertical-align:middle;
-  margin-left:6px;
-}
+  <div class="controls">
+    <button id="themeSwitch">🌓</button>
+    <button id="back">◀</button>
+    <button id="forward">▶</button>
+    <input id="address" placeholder="Entrer une URL">
+    <button id="go">Aller</button>
+    <button id="newTab">＋</button>
+  </div>
+</header>
 
-/* Styles principaux */
-:root{
-  --bg-dark:#0b0e1a;
-  --card-dark:#111729;
-  --text-dark:#e0e6ff;
-  --bg-light:#f7f9ff;
-  --card-light:#ffffff;
-  --text-light:#1a1a1a;
-  --rainbow:linear-gradient(90deg,#ff0040,#ff8c00,#ffee00,#4de94c,#1ccfff,#5a00ff,#ff00c8,#ff0040);
-}
+<div class="tabsBar">
+  <div id="tabsContainer" class="tabsContainer"></div>
+</div>
 
-html[data-theme="dark"]{--bg:var(--bg-dark);--text:var(--text-dark);}
-html[data-theme="light"]{--bg:var(--bg-light);--text:var(--text-light);}
+<div id="progressBar"></div>
 
-body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;}
-.topbar{display:flex;gap:5px;padding:5px;background:var(--bg);align-items:center;
-border-bottom:3px solid transparent;background-image:var(--rainbow);background-size:400%;animation:rainbowMove 10s linear infinite;}
-@keyframes rainbowMove{0%{background-position:0%}100%{background-position:400%}}
-.controls button,input{padding:5px;border-radius:5px;}
-#viewport{width:100%;height:90vh;border:none;}
-.tabsBar{display:flex;gap:5px;padding:5px;background:var(--bg);}
-.tab{padding:3px 8px;background:#222;color:white;border-radius:5px;cursor:pointer;}
-.tab.active{background:var(--rainbow);background-size:400%;animation:rainbowMove 10s linear infinite;}
+<main>
+  <iframe id="viewport"></iframe>
+</main>
 
-@media (max-width:768px){
-  .topbar{flex-direction:column;gap:6px;padding:6px;}
-  .controls{width:100%;display:grid;grid-template-columns:50px 50px 1fr 60px 50px;gap:6px;}
-  #address{width:100%;}
-  .tabsBar{overflow-x:auto;white-space:nowrap;padding:6px;}
-  .tabsContainer{display:flex;gap:6px;}
-  #viewport{height:80vh;}
-}
+<footer class="footer">
+  Ty-E Browser
+  <img src="images/icon-192.png" class="logo-app" alt="App Logo">
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
